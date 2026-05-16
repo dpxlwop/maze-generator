@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.school.maze.presentation.MainController">
+
+    <!-- Центр — лабиринт -->
+    <center>
+        <Canvas fx:id="canvas" width="700" height="700"/>
+    </center>
+
+    <!-- Правая панель -->
+    <right>
+        <VBox spacing="15" style="-fx-padding: 15; -fx-background-color: #2b2b2b;">
+
+            <Label text="MAZE GENERATION SETTINGS:" style="-fx-text-fill: white;"/>
+
+            <HBox spacing="10">
+                <Label text="ROWS:" style="-fx-text-fill: white;"/>
+                <Spinner fx:id="rowsSpinner" prefWidth="80"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="COLS:" style="-fx-text-fill: white;"/>
+                <Spinner fx:id="colsSpinner" prefWidth="80"/>
+            </HBox>
+
+            <Button text="GENERATE"
+                    onAction="#onGenerate"
+                    style="-fx-background-color: #FFFFFF; -fx-font-size: 16;"/>
+
+            <Button text="SOLVE"
+                    onAction="#onSolve"
+                    style="-fx-background-color: #FFFFFF; -fx-font-size: 16;"/>
+
+            <Button text="LOAD"
+                    onAction="#onLoad"
+                    style="-fx-background-color: #FFFFFF; -fx-font-size: 16;"/>
+
+            <Button text="SAVE"
+                    onAction="#onSave"
+                    style="-fx-background-color: #FFFFFF; -fx-font-size: 16;"/>
+
+        </VBox>
+    </right>
+
+</BorderPane>
