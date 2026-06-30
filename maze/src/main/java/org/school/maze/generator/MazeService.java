@@ -1,6 +1,5 @@
 package org.school.maze.generator;
 
-
 import lombok.Getter;
 
 import java.io.File;

@@ -35,8 +35,8 @@
                     onAction="#onGenerate"
                     style="-fx-background-color: #FFFFFF; -fx-font-size: 16;"/>
 
-            <Button text="SOLVE"
-                    onAction="#onSolve"
+            <Button text="RESET"
+                    onAction="#onReset"
                     style="-fx-background-color: #FFFFFF; -fx-font-size: 16;"/>
 
             <Button text="LOAD"
@@ -46,7 +46,6 @@
             <Button text="SAVE"
                     onAction="#onSave"
                     style="-fx-background-color: #FFFFFF; -fx-font-size: 16;"/>
-
         </VBox>
     </right>
 

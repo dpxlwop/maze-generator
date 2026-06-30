@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "org.school21"
-version = "1.0-SNAPSHOT"
+version = "1.0"
 
 repositories {
     mavenCentral()
@@ -27,7 +27,7 @@ tasks.withType<JavaCompile> {
 
 application {
     mainModule.set("org.school.maze")
-    mainClass.set("org.school.maze.presentation.MainApplication")
+    mainClass.set("org.school.maze.Launcher")
 }
 
 javafx {
@@ -52,12 +52,24 @@ tasks.test {
     useJUnitPlatform()
     jvmArgs("--add-opens", "java.base/java.lang=ALL-UNNAMED")
     modularity.inferModulePath.set(false)
+    testLogging {
+        events("passed", "failed", "skipped")
+        showStandardStreams = true
+        exceptionFormat =
+            org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+    }
 }
 
 jlink {
     imageZip.set(layout.buildDirectory.file("/distributions/app-${javafx.platform.classifier}.zip"))
     options.set(listOf("--strip-debug", "--compress", "2", "--no-header-files", "--no-man-pages"))
     launcher {
-        name = "app"
+        name = "maze"
+    }
+}
+
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "org.school.maze.Launcher"
     }
 }
